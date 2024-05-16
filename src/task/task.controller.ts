@@ -43,21 +43,19 @@ export class TaskController {
     name: 'status',
     required: false,
     type: String,
-    example: 'OPEN or IN_PROGRESS or DONE',
+    enum: TaskStatus,
   })
   @ApiQuery({
     name: 'priority',
     required: false,
-    type: String,
-    example: 'LOW or MEDIUM or HIGH',
+    enum: TaskPriority,
   })
   @ApiQuery({ name: 'page', required: false, type: String, example: '1' })
   @ApiQuery({ name: 'limit', required: false, type: String, example: '5' })
   @ApiQuery({
     name: 'sort',
     required: false,
-    type: String,
-    example: 'ASC or DESC',
+    enum: Sort,
   })
   async findAll(
     @Request() request: AuthGuardRequest,
