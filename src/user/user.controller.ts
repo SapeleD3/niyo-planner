@@ -28,7 +28,7 @@ export class UserController {
 
 @ApiBearerAuth()
 @UseGuards(AuthGuard)
-@Controller('/auth/user')
+@Controller('/user/auth')
 export class AuthUserController {
   constructor(private readonly userService: UserService) {}
 

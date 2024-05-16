@@ -22,7 +22,7 @@ export const generateJwtToken = (payload: GenerateJwtTokenPayload): string => {
 
   const token = jwt.sign({ id }, secret, {
     algorithm,
-    expiresIn: '1hr',
+    expiresIn: '3hr',
   });
 
   return token;

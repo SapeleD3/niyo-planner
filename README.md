@@ -65,3 +65,7 @@ Follow these instructions to set up and run Niyo Planner locally.
 ## API Documentation
 
 Detailed API documentation will be available here. [Documentation](http://localhost:3000/api#/)
+
+## NOTES
+
+- on creating the tasks schema, i opted for adding a startDate and endDate to capture the intended duration of each task

@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PrismaModule } from './prismaModule/prisma.module';
 import { UserModule } from './user/user.module';
+import { TaskModule } from './task/task.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { UserModule } from './user/user.module';
       expandVariables: true,
       envFilePath: ['.env.local', '.env.development', '.env.staging', '.env'],
     }),
+    TaskModule,
   ],
   controllers: [AppController],
   providers: [AppService],
