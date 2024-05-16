@@ -32,6 +32,7 @@ Follow these instructions to set up and run Niyo Planner locally.
 
 ### Prerequisites
 
+- Node.js and npm installed on your machine
 - Docker installed on your machine
 - Docker and Docker Compose installed (for running PostgreSQL and Redis)
 
@@ -42,6 +43,7 @@ Follow these instructions to set up and run Niyo Planner locally.
    ```bash
    git clone https://github.com/your/repository.git
    cd niyo-planner
+   npm install
 
    ```
 
@@ -62,4 +64,4 @@ Follow these instructions to set up and run Niyo Planner locally.
 
 ## API Documentation
 
-Detailed API documentation will be available here.
+Detailed API documentation will be available here. [Documentation](http://localhost:8001/api#/)
