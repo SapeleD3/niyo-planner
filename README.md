@@ -1,73 +1,65 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Niyo Planner
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Welcome to Niyo Planner, a task management system developed by Moses Sapele for NIYO Group. This application provides a REST API for managing tasks, allowing users to create, read, update, and delete tasks efficiently, Niyo Planner is designed to streamline task management
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Features
 
-## Description
+- **User Authentication**: Secure endpoints using authentication.
+- **Task Creation**: Easily create new tasks with specific details.
+- **Fetch Tasks**: Easily create new tasks with specific details.
+- **Task Update**: Update task status, priority, or other attributes.
+- **Task Deletion**: Remove tasks that are no longer relevant.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Technologies Used
 
-## Installation
+- **NestJS**: A progressive Node.js framework for building efficient, reliable, and scalable server-side applications. [NestJS Documentation](https://nestjs.com/)
+- **Prisma**: A modern database toolkit for TypeScript and Node.js that simplifies database access with type safety. Niyo Planner uses Prisma for database ORM. [Prisma Documentation](https://www.prisma.io/docs/)
+- **PostgreSQL**: A powerful, open-source relational database system. Niyo Planner uses PostgreSQL for data storage. [PostgreSQL Documentation](https://www.postgresql.org/docs/)
 
-```bash
-$ npm install
-```
+- **Redis**: An in-memory data structure store used as a cache and message broker. Niyo Planner utilizes Redis for caching. [Redis Documentation](https://redis.io/documentation)
 
-## Running the app
+- **Jest**: A delightful JavaScript testing framework with a focus on simplicity. Niyo Planner uses Jest for unit testing. [Jest Documentation](https://jestjs.io/docs/en/getting-started)
 
-```bash
-# development
-$ npm run start
+- **Supertest**: A library for testing HTTP assertions in Node.js. Niyo Planner uses Supertest for end-to-end testing of API endpoints. [Supertest Documentation](https://github.com/visionmedia/supertest)
 
-# watch mode
-$ npm run start:dev
+- **Docker**: A platform for developing, shipping, and running applications in containers. Niyo Planner is containerized using Docker. [Docker Documentation](https://docs.docker.com/)
 
-# production mode
-$ npm run start:prod
-```
+- **Docker Compose**: A tool for defining and running multi-container Docker applications. Niyo Planner uses Docker Compose to orchestrate containers for the server, database, and Redis cache. [Docker Compose Documentation](https://docs.docker.com/compose/)
 
-## Test
+## Getting Started
 
-```bash
-# unit tests
-$ npm run test
+Follow these instructions to set up and run Niyo Planner locally.
 
-# e2e tests
-$ npm run test:e2e
+### Prerequisites
 
-# test coverage
-$ npm run test:cov
-```
+- Docker installed on your machine
+- Docker and Docker Compose installed (for running PostgreSQL and Redis)
 
-## Support
+### Installation
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+1. Clone the repository:
 
-## Stay in touch
+   ```bash
+   git clone https://github.com/your/repository.git
+   cd niyo-planner
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+   ```
 
-## License
+2. Build and start the application using the Makefile commands:
 
-Nest is [MIT licensed](LICENSE).
+   ```bash
+   # Build the Docker containers and start the application
+    make run
+   ```
+
+### Using Makefile Commands
+
+- `make test`: Run unit tests using Jest.
+- `make build`: Build the Docker containers defined in docker-compose.yml.
+- `make run`: Build and start the Niyo Planner application using Docker Compose.
+- `make down`: Stop and remove the Docker containers.
+- `make show_logs`: Display logs of the Niyo Planner server container.
+
+## API Documentation
+
+Detailed API documentation will be available here.
