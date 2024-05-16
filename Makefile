@@ -10,6 +10,7 @@ up:
 	docker compose -f ${file_name} up  -d --remove-orphans
 	npx prisma generate
 	npx prisma db push
+	npm run start:dev
 run: build up
 down:
 	docker compose -f ${file_name} down

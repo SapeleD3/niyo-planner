@@ -6,28 +6,6 @@ networks:
     driver: bridge
 
 services:
-  server:
-    platform: linux/arm64
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    restart: always
-    container_name: niyo-planner-server
-    volumes:
-      - .:/app
-    ports:
-      - '8001:3000'
-    env_file:
-      - ./.env
-    environment:
-      REDIS_URI: redis://redis:6379/0
-      DATABASE_URL: 'postgres://${PSQL_USERNAME}:${PSQL_PASSWORD}@db:5432/niyo-planner'
-    depends_on:
-      db:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-
   db:
     image: postgres:13.5
     container_name: niyo-planner-db

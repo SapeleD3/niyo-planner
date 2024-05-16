@@ -3,40 +3,37 @@ import {
   Get,
   Post,
   Body,
-  Patch,
-  Param,
-  Delete,
+  Request,
+  UseGuards,
 } from '@nestjs/common';
 import { UserService } from './user.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { CreateUserDto, UserLoginDto } from './dto';
+import { AuthGuard, AuthGuardRequest } from '../common';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.userService.create(createUserDto);
+  @Post('/register')
+  register(@Body() createUserDto: CreateUserDto) {
+    return this.userService.registerUser(createUserDto);
   }
 
-  @Get()
-  findAll() {
-    return this.userService.findAll();
+  @Post('/login')
+  login(@Body() userLoginDto: UserLoginDto) {
+    return this.userService.loginUser(userLoginDto);
   }
+}
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(+id);
-  }
+@ApiBearerAuth()
+@UseGuards(AuthGuard)
+@Controller('/auth/user')
+export class AuthUserController {
+  constructor(private readonly userService: UserService) {}
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.update(+id, updateUserDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.userService.remove(+id);
+  @Get('')
+  findOne(@Request() request: AuthGuardRequest) {
+    return this.userService.findAuthenticatedUser(request.id);
   }
 }

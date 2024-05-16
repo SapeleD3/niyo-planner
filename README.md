@@ -64,4 +64,4 @@ Follow these instructions to set up and run Niyo Planner locally.
 
 ## API Documentation
 
-Detailed API documentation will be available here. [Documentation](http://localhost:8001/api#/)
+Detailed API documentation will be available here. [Documentation](http://localhost:3000/api#/)
