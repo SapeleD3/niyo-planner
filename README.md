@@ -41,7 +41,7 @@ Follow these instructions to set up and run Niyo Planner locally.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your/repository.git
+   git clone git@github.com:SapeleD3/niyo-planner.git
    cd niyo-planner
    npm install
 
@@ -64,7 +64,7 @@ Follow these instructions to set up and run Niyo Planner locally.
 
 ## API Documentation
 
-Detailed API documentation will be available here. [Documentation](http://localhost:3000/api#/)
+Detailed API documentation will be available here. [Documentation](http://localhost:3000/api#/) after server has been spun up
 
 ## NOTES
 
