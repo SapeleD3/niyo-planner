@@ -47,7 +47,9 @@ Follow these instructions to set up and run Niyo Planner locally.
 
    ```
 
-2. Build and start the application using the Makefile commands:
+2. Create .env file and populate it with values as shown in the template file `.env.template`
+
+3. Build and start the application using the Makefile commands:
 
    ```bash
    # Build the Docker containers and start the application
@@ -60,7 +62,6 @@ Follow these instructions to set up and run Niyo Planner locally.
 - `make build`: Build the Docker containers defined in docker-compose.yml.
 - `make run`: Build and start the Niyo Planner application using Docker Compose.
 - `make down`: Stop and remove the Docker containers.
-- `make show_logs`: Display logs of the Niyo Planner server container.
 
 ## API Documentation
 
@@ -111,3 +112,10 @@ enum TaskPriority {
 ## NOTES
 
 - on creating the tasks schema, i opted for adding a startDate and endDate to capture the intended duration of each task as optional fields, as it can also be utilized as a todo list
+
+## How to improve Application
+
+- Caching: introducing a cache would reduce time taken for read operations, the redis cache has already been provisioned in the docker compose, and can be utilized when the application is ready to scale
+- logging: introducing a centralized logging would reduce the time taken to identify and resolve server issues, for simple applications such as this i would recommend sentry, and for complex systems i would recommend the ELK stack using elastic search for data storem logstash for data pipeline and kibana for visualization
+
+Thank you
