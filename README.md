@@ -66,6 +66,48 @@ Follow these instructions to set up and run Niyo Planner locally.
 
 Detailed API documentation will be available here. [Documentation](http://localhost:3000/api#/) after server has been spun up
 
+## Data Models
+
+```
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Tasks     Tasks[]
+}
+
+model Tasks {
+  id          String       @id @default(uuid())
+  title       String
+  description String
+  status      TaskStatus
+  priority    TaskPriority
+
+  startDate   DateTime? // optional
+  endDate     DateTime? // optional
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id]) // many to one relation between tasks and user
+  userId    String
+}
+
+enum TaskStatus {
+  OPEN
+  IN_PROGRESS
+  DONE
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+```
+
 ## NOTES
 
 - on creating the tasks schema, i opted for adding a startDate and endDate to capture the intended duration of each task
