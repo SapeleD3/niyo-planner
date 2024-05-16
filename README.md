@@ -110,4 +110,4 @@ enum TaskPriority {
 
 ## NOTES
 
-- on creating the tasks schema, i opted for adding a startDate and endDate to capture the intended duration of each task
+- on creating the tasks schema, i opted for adding a startDate and endDate to capture the intended duration of each task as optional fields, as it can also be utilized as a todo list
